@@ -29,9 +29,7 @@ public class calculadorapropina extends JFrame {
 	private JTextField ventanaPropina;
 	private JTextField ventanaImporteTotal;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -45,13 +43,10 @@ public class calculadorapropina extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public calculadorapropina() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("/Users/Jonay/Desktop/png-transparent-computer-icons-currency-trade-currency-converter-text-trademark-service-thumbnail.png"));
 
-		setTitle("CALCULADORA PROPINA");
+		setTitle("Calculadora Propina");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 381, 450);
 		contentPane = new JPanel();
@@ -68,34 +63,34 @@ public class calculadorapropina extends JFrame {
 		ventanaImporteFactura.setText("Ingrese Importe...");
 		ventanaImporteFactura.setHorizontalAlignment(SwingConstants.CENTER);
 		ventanaImporteFactura.setForeground(new Color(254, 255, 255));
-		ventanaImporteFactura.setBackground(new Color(0, 0, 0));
+		ventanaImporteFactura.setBackground(new Color(67, 122, 122));
 		ventanaImporteFactura.setBounds(67, 49, 253, 48);
 		contentPane.add(ventanaImporteFactura);
 		ventanaImporteFactura.setColumns(10);
 		
-		JLabel etiquetaPropinaPorcentaje = new JLabel("PROPINA %:");
+		JLabel etiquetaPropinaPorcentaje = new JLabel("Propina %:");
 		etiquetaPropinaPorcentaje.setBounds(155, 109, 78, 31);
 		contentPane.add(etiquetaPropinaPorcentaje);
 		
 		JComboBox desplegableDescuento = new JComboBox<String>();
-		desplegableDescuento.setModel(new DefaultComboBoxModel<String>(new String[] {"Seleccione un Porcentaje", "3", "10", "15", "20"}));
+		desplegableDescuento.setModel(new DefaultComboBoxModel<String>(new String[] {"Seleccione un porcentaje","10", "15", "20"}));
 		desplegableDescuento.setToolTipText("10%");
 		desplegableDescuento.setMaximumRowCount(5);
 		desplegableDescuento.setBounds(67, 148, 253, 21);
 		contentPane.add(desplegableDescuento);
 		
-		JLabel lblNewLabel = new JLabel("PROPINA:");
+		JLabel lblNewLabel = new JLabel("Propina:");
 		lblNewLabel.setBounds(16, 219, 67, 31);
 		contentPane.add(lblNewLabel);
 		
-		JLabel etiquetaImporteTotal = new JLabel("IMPORTE TOTAL:");
+		JLabel etiquetaImporteTotal = new JLabel("Import total:");
 		etiquetaImporteTotal.setBounds(224, 219, 113, 31);
 		contentPane.add(etiquetaImporteTotal);
 		
 		ventanaPropina = new JTextField();
 		ventanaPropina.setHorizontalAlignment(SwingConstants.RIGHT);
 		ventanaPropina.setForeground(new Color(254, 255, 255));
-		ventanaPropina.setBackground(new Color(0, 0, 0));
+		ventanaPropina.setBackground(new Color(67, 122, 122));
 		ventanaPropina.setBounds(16, 262, 140, 41);
 		contentPane.add(ventanaPropina);
 		ventanaPropina.setColumns(10);
@@ -103,12 +98,12 @@ public class calculadorapropina extends JFrame {
 		ventanaImporteTotal = new JTextField();
 		ventanaImporteTotal.setHorizontalAlignment(SwingConstants.RIGHT);
 		ventanaImporteTotal.setForeground(new Color(254, 255, 255));
-		ventanaImporteTotal.setBackground(new Color(0, 0, 0));
+		ventanaImporteTotal.setBackground(new Color(67, 122, 122));
 		ventanaImporteTotal.setColumns(10);
 		ventanaImporteTotal.setBounds(222, 262, 140, 41);
 		contentPane.add(ventanaImporteTotal);
 		
-		JButton botonReinicio = new JButton("REINICIO");
+		JButton botonReinicio = new JButton("reiniciar");
 		botonReinicio.setBounds(135, 352, 117, 41);
 		contentPane.add(botonReinicio);
 		
@@ -125,9 +120,7 @@ public class calculadorapropina extends JFrame {
 		
 		desplegableDescuento.addActionListener(new ActionListener() {
 			
-			@Override
 			public void actionPerformed(ActionEvent e) {
-				//funcion del objeto Combobox para devolver el elemento seleccionado.
 				desplegableDescuento.getSelectedItem().toString();
 				String porcentajeSeleccionado = desplegableDescuento.getSelectedItem().toString();
 				
@@ -135,7 +128,7 @@ public class calculadorapropina extends JFrame {
 				double importeFactura;
 				String importeFacturaTexto=ventanaImporteFactura.getText();
 				
-				//
+				
 				if (importeFacturaTexto.matches("\\d+") && porcentajeSeleccionado.matches("\\d+")) {
 					
 					int porcentaje=Integer.parseInt(porcentajeSeleccionado);
